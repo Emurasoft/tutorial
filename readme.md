@@ -1,5 +1,5 @@
 ﻿# How To Create Plugins for EmEditor
-<sup>By Makoto Emura</sup>
+<sup>By Makoto Emura</sup><br />
 <sup>Copyright © 2018 by Emurasoft, Inc.</sup>
 ### Contents:
 1. Getting Started
@@ -8,19 +8,19 @@
 ### Prerequisites for this tutorial:
 * Some experience in Visual C++
 * Microsoft Visual Studio
-* EmEditor Professional 64-bit
+* EmEditor Professional
 # Getting Started
 The first part of this tutorial is to make sure we can compile a simple program and get it working in EmEditor.
- 1.  **Download the [hello world program](https://github.com/).** Open EmEditor_HelloWorld/HelloWorld.sln on Visual Studio.
-2. **Build the project.** Use the default configuration for now - debug on x64.
-3. **Open EmEditor.** Go to Tools > Plug-ins > Customize Plug-ins... and click the button that says "Add." Open EmEditor_HelloWorld/x64/Debug/HelloWorld.dll.
-4. **Click on the yellow circle icon in your plug-ins toolbar.** If you don't see the plug-ins toolbar, you can enable it in View > Toolbars > Plug-ins Toolbar. The plugin writes "Hello World! " on the editor.
-5. **Remove the plugin** by opening the Customize Plug-ins window, selecting the sample plugin, and clicking "Remove."
+1. **Clone the [hello world program](https://github.com/Emurasoft/HelloWorld) and open HelloWorld.vcxproj in Visual Studio.**
+2. **Build the project.** Use the default configuration for now - debug on x64 or x86.
+3. **Open EmEditor.** Go to Tools > Plug-ins > Customize Plug-ins... and click the button that says "Add" and add the DLL that was created.
+4. **Click on the funny looking light bulb icon in your plug-ins toolbar.** If you don't see the plug-ins toolbar, you can enable it in View > Toolbars > Plug-ins Toolbar. Yes, that is supposed to resemble a light bulb. The plugin writes "Hello World! " on the editor.
+5. **Remove the plugin** by opening the Customize Plug-ins window, selecting the HelloWorld plugin, and clicking "Remove."
 
 # Start A New Project From Scratch
-You can use HelloWorld as the starting point, or alternatively, follow these instructions to setup a workspace to develop a new plugin. 
+You can use HelloWorld as the starting point for your program, or alternatively, follow these instructions to setup a workspace to develop a new plugin.
 1. **Create a new DLL project.** In Visual Studio, make a new project using the "Dynamic-Link Library" template for Visual C++.
-2. **Download and add the three template files to your new project.** The template folder contains files that are required to link a plugin to EmEditor. Treat these files as read-only. The template files are:
+2. **Add the [three template files](https://github.com/Emurasoft/template) to your new project.** The template repository contains files that are required to link a plugin to EmEditor. Treat these files as read-only. The template files are:
 	* etlframe.h - helper functions for plugin.h
 	* plugin.h - handles message passing tasks
 	* exports.def - exports functions from the plugin so that they are callable from EmEditor
@@ -117,4 +117,5 @@ _ETL_IMPLEMENT
 	 3. **Import a 16 bit color, 16x16 pixel bitmap image to the resource file.** If EmEditor is unable to load the icon, try opening and saving it in paint, as a .bmp with 256 colors.
 	 4. In the enum on the main .cpp file, **change the value of `_IDS_MENU`, `_IDS_STATUS`, and `_IDS_NAME` to the ID name of the name string, and `_IDB_BITMAP` to the bitmap ID.** The IDs are listed on resource.h.
 
-More to be added soon!
+# What Can You Do With a Plugin?
+To be added soon!
