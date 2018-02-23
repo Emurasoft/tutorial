@@ -1,11 +1,11 @@
 ﻿# How To Create Plugins for EmEditor
 <sup>By Makoto Emura</sup><br />
-<sup>[CC-BY](#License)</sup>
+<sup>[CC-BY](#license)</sup>
 ### Contents:
-1. [Getting Started](#Getting Started)
-2. [Start A New Project From Scratch](#Start A New Project From Scratch)
-3. [What Can You Do With a Plugin?](#What Can You Do With a Plugin?)
-4. [Common Problems and How To Fix Them](#Common Problems and How To Fix Them)
+1. [Getting Started](#getting-started)
+2. [Start A New Project From Scratch](#start-a-new-project-from-scratch)
+3. [What Can You Do With a Plugin?](#what-can-you-do-with-a-plugin)
+4. [Common Problems and How To Fix Them](#common-problems-and-how-to-fix-them)
 ### Prerequisites for this tutorial:
 * Some experience in Visual C++
 * Microsoft Visual Studio
