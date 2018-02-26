@@ -1,11 +1,10 @@
 ﻿# How To Create Plug-ins for EmEditor
-By Makoto Emura
+By Makoto Emura<br />
 <sup>[CC-BY](#license)</sup>
 ### Contents:
 1. [Getting Started](#getting-started)
 2. [Start A New Project From Scratch](#start-a-new-project-from-scratch)
 3. [What Can You Do With a Plug-in?](#what-can-you-do-with-a-plug-in)
-4. [Common Problems and How To Fix Them](#common-problems-and-how-to-fix-them)
 ### Prerequisites for this tutorial:
 * Some experience in Visual C++
 * Microsoft Visual Studio
@@ -126,9 +125,7 @@ This section will outline what you can do with the plug-in API. Refer to the [AP
 3. You can **search for a string** using [`Editor_FindW()`](http://www.emeditor.org/en/plugin_macro_editor_findw.html) and [`Editor_FindRegex()`](http://www.emeditor.org/en/plugin_macro_editor_findregex.html).
 4. **Manipulate CSV documents** with [`Editor_GetCell()`](http://www.emeditor.org/en/plugin_macro_editor_getcell.html), [`Editor_GetColumn()`](http://www.emeditor.org/en/plugin_macro_editor_getcolumn.html), [`Editor_AutoFill()`](http://www.emeditor.org/en/plugin_macro_editor_autofill.html).
 5. **Get information about the current workspace** with [`Editor_Info()`](http://www.emeditor.org/en/plugin_macro_editor_info.html), [`Editor_GetClip()`](http://www.emeditor.org/en/plugin_macro_editor_getclip.html), [`Editor_GetVersion()`](http://www.emeditor.org/en/plugin_macro_editor_getversion.html), etc.
-6. To **display a graphical interface**, you must first get the editor instance handle using `EEGetLocaleInstanceHandle()`. Dialogs are simple to make, but to use the editor while interacting with the plug-in, a better option could be to make a sidebar or a toolbar, such as what Projects and HTMLBar employs. For debugging or for outputing simple data, you can write to the status bar of the editor using [`Editor_SetStatusW()`](http://www.emeditor.org/en/plugin_macro_editor_setstatusw.html).
-
-# Common Problems and How To Fix Them
+6. To **display a graphical interface**, you must first get the editor instance handle using `EEGetLocaleInstanceHandle()`. Dialogs are simple to make, but to use the editor while interacting with the plug-in, a better option might be to make a sidebar or a toolbar, such as what Projects and HTMLBar employs. For debugging or for outputing simple data, you can write to the status bar of the editor using [`Editor_SetStatusW()`](http://www.emeditor.org/en/plugin_macro_editor_setstatusw.html).
 
 ### License
 This text, *How To Create Plug-ins for EmEditor*, is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
