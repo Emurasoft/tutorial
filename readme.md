@@ -16,7 +16,6 @@ The first part of this tutorial is to make sure we can compile a simple program 
 3. **Open EmEditor.** Go to Tools > Plug-ins > Customize Plug-ins... and click the button that says "Add" and add the DLL that was created.
 4. **Click on the funny looking light bulb icon in your plug-ins toolbar.** If you don't see the plug-ins toolbar, you can enable it in View > Toolbars > Plug-ins Toolbar. Yes, that is supposed to resemble a light bulb. The plug-in writes "Hello World! " on the editor.
 5. **Remove the plug-in** by opening the Customize Plug-ins window, selecting the HelloWorld plug-in, and clicking "Remove."
-
 # Start A New Project From Scratch
 You can use HelloWorld as the starting point for your program, or alternatively, follow these instructions to setup a workspace to develop a new plug-in.
 1. **Create a new DLL project.** In Visual Studio, make a new project using the "Dynamic-Link Library" template for Visual C++.
@@ -126,5 +125,7 @@ This section will outline what you can do with the plug-in API. Refer to the [AP
 5. **Get information about the current workspace** with [`Editor_Info()`](http://www.emeditor.org/en/plugin_macro_editor_info.html), [`Editor_GetClip()`](http://www.emeditor.org/en/plugin_macro_editor_getclip.html), [`Editor_GetVersion()`](http://www.emeditor.org/en/plugin_macro_editor_getversion.html), etc.
 6. To **display a graphical interface**, you must first get the editor instance handle using `EEGetLocaleInstanceHandle()`. Dialogs are simple to make, but to use the editor while interacting with the plug-in, a better option might be to make a sidebar or a toolbar, such as what Projects and HTMLBar employs. For debugging or for outputing simple data, you can write to the status bar of the editor using [`Editor_SetStatusW()`](http://www.emeditor.org/en/plugin_macro_editor_setstatusw.html).
 
+The [Emurasoft organization page](https://github.com/Emurasoft) contains several source codes for plug-ins that you may reference. If you have any questions, feel free to send me an email to makoto@emurasoft.com.
+
 ### License
-This text, *How To Create Plug-ins for EmEditor*, is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+This document is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
