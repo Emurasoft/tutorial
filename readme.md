@@ -125,12 +125,12 @@ void MyCFrame::OnCommand(HWND hwnd)
 	4. In the enum on the main .cpp file, **change the value of `_IDS_MENU`, `_IDS_STATUS`, and `_IDS_NAME` to the ID name of the name string, and `_IDB_BITMAP` to the bitmap ID.**
 8. Additional info
 	* To add another .cpp file to the project, you must define `EE_EXTERN_ONLY` before including etlframe.h. (Do that for all .cpp files except the main one.) Thus, the first couple rows of the new file should look like this:
-```C++
-#include "stdafx.h"
-#define EE_EXTERN_ONLY
-#define ETL_FRAME_CLASS_NAME CMyFrame
-#include "etlframe.h"
-```
+	```C++
+	#include "stdafx.h"
+	#define EE_EXTERN_ONLY
+	#define ETL_FRAME_CLASS_NAME CMyFrame
+	#include "etlframe.h"
+	```
 	* There is a helpful function called `GetFrame()` which returns a pointer to your current `CETLFrame`.
 
 # What Can You Do With a Plug-in?
@@ -145,9 +145,9 @@ This section will outline what you can do with the plug-in API. Refer to the [AP
 
 # Potential Problems and How To Fix Them
 Here are some problems that I came across while making HelloWorld and CharacterCount:
-* **... is not a member of 'CMyFrame'** You did not implement this required function or variable.
+* **"... is not a member of 'CMyFrame'"** You did not implement this required function or variable.
 * **"C:\...\NewPlugin.dll is not a valid Win32 application."** Read step 3.3 of "Start A New Project From Scratch".
-* **Linking issues related to the plug-in library:** "error C2027: use of undefined type 'CMyFrame'", "error LNK2019: unresolved external symbol ... _ETLCreateFrame", "error C2027: use of undefined type 'ETL_FRAME_CLASS_NAME'", "error LNK2005: "void __cdecl DeleteAllFrames(void)" ... already defined in NewPlugin.obj". Make sure all required header includes are added, in the correct order. Read steps 6 and 8 if "Start A New Project From Scratch".
+* **Linking issues related to the plug-in library:** "error C2027: use of undefined type 'CMyFrame'", "error LNK2019: unresolved external symbol ... _ETLCreateFrame", "error C2027: use of undefined type 'ETL_FRAME_CLASS_NAME'", "error LNK2005: "void __cdecl DeleteAllFrames(void)" ... already defined in NewPlugin.obj". Make sure all required header includes are added, in the correct order. Read steps 6 and 8 of "Start A New Project From Scratch".
 * **My new plug-in does not show on the plug-in list after adding it.** Make sure you are importing the correct 32 or 64 bit version of your plug-in.
 * **My plug-in icon on the toolbar looks like the Internet Explorer icon (or some other icon).** The BMP image was not readable. Read step 7.3 of "Start A New Project From Scratch".
 
