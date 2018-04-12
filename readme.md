@@ -11,7 +11,7 @@ By Makoto Emura<br />
 * Microsoft Visual Studio
 * EmEditor Professional
 # Getting Started
-The first part of this tutorial is to make sure we can compile a simple program and get it working in EmEditor.
+The first part of this tutorial is to make sure we can compile a simple program and get it working in [EmEditor](https://www.emeditor.com/).
 1. **Download the [hello world program](https://github.com/Emurasoft/HelloWorld) and open HelloWorld.vcxproj in Visual Studio.**
 2. **Build the project.** Use the default configuration for now - debug on x64 or x86.
 3. **Open EmEditor.** Go to Tools > Plug-ins > Customize Plug-ins... and click the button that says "Add" and add the DLL that was created.
@@ -40,8 +40,9 @@ You can use HelloWorld as the starting point for your program, or alternatively,
 ```
 5. **Create a new header file and add the following code.**
 	* `CETLFrame` encapsulates the plug-in. It is constructed only when EmEditor opens, and destroyed only when EmEditor closes.
-	* The enum constants contain information about the plug-in, such as the name and icon image of this plug-in.
+	* The enum constants contain information about the plug-in, such as the name and icon image of this plug-in. There is more information about these variables in ["CETLFrame Member Variables"](http://www.emeditor.org/en/plugin_member_variables_index.html).
 	* The functions [`OnCommand()` and `OnEvents()`](http://www.emeditor.org/en/plugin_exports_index.html) are the main entry points for your application.
+	* You can learn more about these callback functions, plus some optional ones, in ["Messages to Plug-ins"](http://www.emeditor.org/en/plugin_plugin_message_index.html) and ["Functions to Export"](http://www.emeditor.org/en/plugin_exports_index.html).
 ```C++
 #pragma once
 
@@ -141,7 +142,7 @@ This section will outline what you can do with the plug-in API. Refer to the [AP
 3. You can **search for a string** using [`Editor_FindW()`](http://www.emeditor.org/en/plugin_macro_editor_findw.html) and [`Editor_FindRegex()`](http://www.emeditor.org/en/plugin_macro_editor_findregex.html).
 4. **Manipulate CSV documents** with [`Editor_GetCell()`](http://www.emeditor.org/en/plugin_macro_editor_getcell.html), [`Editor_GetColumn()`](http://www.emeditor.org/en/plugin_macro_editor_getcolumn.html), [`Editor_AutoFill()`](http://www.emeditor.org/en/plugin_macro_editor_autofill.html).
 5. **Get information about the current workspace** with [`Editor_Info()`](http://www.emeditor.org/en/plugin_macro_editor_info.html), [`Editor_GetClip()`](http://www.emeditor.org/en/plugin_macro_editor_getclip.html), [`Editor_GetVersion()`](http://www.emeditor.org/en/plugin_macro_editor_getversion.html), etc.
-6. To **display a graphical interface**, you must first get the editor instance handle using `EEGetLocaleInstanceHandle()`. Dialogs are simple to make, but to be able to use the editor while interacting with the plug-in, a better option might be to make a sidebar or a toolbar, such as what Projects and HTMLBar employs. For debugging or for outputing simple data, you can write to the status bar of the editor using [`Editor_SetStatusW()`](http://www.emeditor.org/en/plugin_macro_editor_setstatusw.html).
+6. To **display a graphical interface**, you first must get a handle to the DLL using `EEGetLocaleInstanceHandle()`. Dialogs are simple to make, but to be able to use the editor while interacting with the plug-in, a better option might be to make a sidebar or a toolbar, such as what Projects and HTMLBar employs. For debugging or for outputing simple data, you can write to the status bar of the editor using [`Editor_SetStatusW()`](http://www.emeditor.org/en/plugin_macro_editor_setstatusw.html).
 
 # Potential Problems and How To Fix Them
 Here are some problems that I came across while making HelloWorld and CharacterCount:
@@ -152,7 +153,7 @@ Here are some problems that I came across while making HelloWorld and CharacterC
 * **My new plug-in does not show on the plug-in list after adding it.** Make sure you are importing the correct 32 or 64 bit version of your plug-in.
 * **My plug-in icon on the toolbar looks like the Internet Explorer icon (or some other icon).** The BMP image was not readable. Read step 7.3 of "Start A New Project From Scratch".
 
-The [Emurasoft organization page](https://github.com/Emurasoft) contains several source codes for plug-ins that you may reference. If you have any questions or feedback, please send me an email to makoto@emurasoft.com.
+The [Emurasoft organization page](https://github.com/Emurasoft) contains several source codes for plug-ins that you may reference. If you have any questions or feedback, send me an email to makoto@emurasoft.com.
 
 ### License
 This document is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
