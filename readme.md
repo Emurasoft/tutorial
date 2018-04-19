@@ -149,7 +149,7 @@ Here are some problems that I came across while making HelloWorld and CharacterC
 * **"... is not a member of 'CMyFrame'."** You did not implement this required function or variable.
 * **"C:\...\NewPlugin.dll is not a valid Win32 application."** Read step 3.3 of "Start A New Project From Scratch".
 * **Linking issues related to the plug-in library:** "error C2027: use of undefined type 'CMyFrame'", "error LNK2019: unresolved external symbol ... _ETLCreateFrame", "error C2027: use of undefined type 'ETL_FRAME_CLASS_NAME'", "error LNK2005: "void __cdecl DeleteAllFrames(void)" ... already defined in NewPlugin.obj". Make sure all required header includes are added, in the correct order. Read steps 6 and 8 of "Start A New Project From Scratch".
-* **"'_USE_LOC_DLL': undeclared identifier."** You must either define the variable _USE_LOC_DLL or #define EE_EXTERN_ONLY. See step 8 of "Start A New Project From Scratch".
+* **"'_USE_LOC_DLL': undeclared identifier."** You must either define the variable `_USE_LOC_DLL` or `#define EE_EXTERN_ONLY`. See step 8 of "Start A New Project From Scratch".
 * **My new plug-in does not show on the plug-in list after adding it.** Make sure you are importing the correct 32 or 64 bit version of your plug-in.
 * **My plug-in icon on the toolbar looks like the Internet Explorer icon (or some other icon).** The BMP image was not readable. Read step 7.3 of "Start A New Project From Scratch".
 
