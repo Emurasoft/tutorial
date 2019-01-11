@@ -153,7 +153,7 @@ Here are some problems that I came across while making HelloWorld and CharacterC
 * **My new plug-in does not show on the plug-in list after adding it.** Make sure you are importing the correct 32 or 64 bit version of your plug-in.
 * **My plug-in icon on the toolbar looks like the Internet Explorer icon (or some other icon).** The BMP image was not readable. Read step 7.3 of "Start A New Project From Scratch".
 
-The [Emurasoft organization page](https://github.com/Emurasoft) contains several source codes for plug-ins that you may reference. If you have any questions or feedback, send me an email to makoto@emurasoft.com.
+The [Emurasoft organization page](https://github.com/Emurasoft) contains several source codes for plug-ins that you may reference.
 
 ### License
 This document is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
