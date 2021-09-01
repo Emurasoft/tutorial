@@ -124,7 +124,7 @@ public:
 ```
 
 5. **Clear the main .cpp file and add the following code.** In this code snippet, change `main.h` to the name of the header file that you have created in the last step.
-	* `_ETL_IMPLEMENT` enables etlframe.h to call necessary construct and destroy tasks, and must come after the definition for CETLFrame.
+	* `_ETL_IMPLEMENT` calls necessary initialization code, and must come after the definition for `CETLFrame`.
 
 ```C++
 #include "main.h"
@@ -142,7 +142,6 @@ void MyCFrame::OnCommand(HWND hwnd) {
 	4. In the enum on the main .cpp file, **change the value of `_IDS_MENU`, `_IDS_STATUS`, and `_IDS_NAME` to the ID name of the name string, and `_IDB_BITMAP` to the bitmap ID.**
 7. Additional info
 	* To include `etlframe.h` in other files, you must define `EE_EXTERN_ONLY` before including `etlframe.h`. (Do that for all source files except for the main .cpp file.) Thus, the top of the new file should look like this:
-
 ```C++
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
@@ -152,7 +151,6 @@ void MyCFrame::OnCommand(HWND hwnd) {
 #define ETL_FRAME_CLASS_NAME CMyFrame
 #include "etlframe.h"
 ```
-
 	* There is a helpful function called `GetFrame()` which returns a pointer to your current `CETLFrame`.
 
 # What Can You Do With a Plug-in?
