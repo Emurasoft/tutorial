@@ -54,8 +54,7 @@ You can use HelloWorld as the starting point for your program, or alternatively,
 #define ETL_FRAME_CLASS_NAME MyCFrame
 #include "etlframe.h"
 
-class MyCFrame : public CETLFrame<MyCFrame>
-{
+class MyCFrame : public CETLFrame<MyCFrame> {
 public:
 	enum {
 		_IDS_NAME = 0,
@@ -77,7 +76,7 @@ public:
 		_MAX_EE_VERSION = 0,
 		_MIN_EE_VERSION = 0,
 		_SUPPORT_EE_PRO = 0,
-		_SUPPORT_EE_STD = 0
+		_SUPPORT_EE_STD = 0,
 	};
 
 	void OnCommand(HWND hwnd);
