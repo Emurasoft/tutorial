@@ -28,7 +28,7 @@ The first part of this tutorial is to make sure we can compile a simple program 
 # Start A New Project From Scratch
 You can use HelloWorld as the starting point for your program, or alternatively, follow these instructions to setup a workspace to develop a new plug-in.
 1. **Create a new DLL project.** In Visual Studio, make a new project using the **Dynamic-Link Library** template for Visual C++.
-2. **Add the [three template files](https://github.com/Emurasoft/template) to your new project.** The template repository contains two header files and one module-definition file that are required to link a plug-in to EmEditor. Treat these files as read-only. The template files are:
+2. **Add the [three plugin files](https://github.com/Emurasoft/emeditor-plugin-library) to your new project.** The plugin library contains two header files and one module-definition file that are required to link a plug-in to EmEditor. Treat these files as read-only. The library files are:
 	* `etlframe.h` - helper functions for plug-in.h
 	* `plugin.h` - handles message passing tasks
 	* `exports.def` - exports functions from the plug-in so that they are callable from EmEditor
