@@ -34,9 +34,9 @@ You can use HelloWorld as the starting point for your program, or alternatively,
 	* `exports.def` - exports functions from the plug-in so that they are callable from EmEditor
 3. **Make a couple changes to the project properties:**
 	1. **Change the linker settings to use exports.def as the module definition file.** In project properties, go to Linker | Input. At the top of the window, change configuration and platform to all, so that this change affects all builds. Change the value of Module Definition File to `exports.def`.
-	2. **Go to C/C++ | Code Generation | Runtime Library and change the Runtime Library to "Multi-threaded Debug (/MTd)" for debug configuration, and "Multi-threaded (/MT)" for release configuration.**
-	3. **Under Linker | Input, add `shlwapi.lib` as an additional dependency.**
-	4. **Change the debugging command to EmEditor.exe.** This is optional but recommended, so that the EmEditor is opened when you start debugging. In Debugging, change the Command value to the path to your EmEditor binary, `EmEditor.exe`.
+	2. **Under Linker | Input, add `shlwapi.lib` as an additional dependency.**
+	3. **Change the debugging command to EmEditor.exe.** This is optional but recommended, so that the EmEditor is opened when you start debugging. In Debugging, change the Command value to the path to your EmEditor executable.
+	4. **Go to C/C++ | Code Generation | Runtime Library and change the Runtime Library to "Multi-threaded Debug (/MTd)" for debug configuration, and "Multi-threaded (/MT)" for release configuration.**
 4. **Create a new header file and add the following code.**
 	* `CETLFrame` encapsulates the plug-in. It is constructed only when EmEditor opens, and destroyed only when EmEditor closes.
 	* The enum constants contain information about the plug-in, such as the name and icon image of this plug-in. There is more information about these variables in ["CETLFrame Member Variables"](http://www.emeditor.org/en/plugin_member_variables_index.html).
@@ -136,9 +136,9 @@ void MyCFrame::OnCommand(HWND hwnd) {
 
 6. **Give the plug-in a name and an icon.** EmEditor retrieves this information through resource files.
 	1. **Add a new resource file** to your project. It should have the extension ".rc".
-	2. **Add a String Table to the resource file.** Double click on your resource file to open the Resource View. Now right click on the resource folder and click Add Resource and add a String Table. Change the Caption value to the plug-in name.
-	3. **Import a 16 bit color, 16x16 pixel bitmap image to the resource file.** If EmEditor is unable to load the icon, try opening and saving it in Paint, as a .bmp with 256 colors.
-	4. In the enum on the main .cpp file, **change the value of `_IDS_MENU`, `_IDS_STATUS`, and `_IDS_NAME` to the ID name of the name string, and `_IDB_BITMAP` to the bitmap ID.**
+	2. **Add a String Table to the resource file.** Double click on your resource file to open the Resource View. Now right click on the resource folder and click Add Resource and add a String Table. Each string has an ID and a Caption. Add a string entry for your plug-in name.
+	3. **Open the Add Resource dialog again and Import a 16 bit color, 16x16 pixel bitmap image to the resource file.** If EmEditor is unable to load the icon, try opening and saving it in Paint, as a .bmp with 256 colors.
+	4. In the enum of the `MyCFrame` class, **change the value of `_IDS_MENU`, `_IDS_STATUS`, and `_IDS_NAME` to the ID name of the name string, and `_IDB_BITMAP` to the bitmap ID.**
 7. Additional info
 	* To include `etlframe.h` in other files, you must define `EE_EXTERN_ONLY` before including `etlframe.h`. (Do that for all source files except for the main .cpp file.) Thus, the top of the new file should look like this:
 
@@ -170,7 +170,7 @@ This section will outline what you can do with the plug-in API. Refer to the [AP
 
 Here are some problems that I came across while making HelloWorld and CharacterCount:
 * **"... is not a member of 'CMyFrame'."** You did not implement this required function or variable.
-* **"C:\...\NewPlugin.dll is not a valid Win32 application."** See step 3.4 of "Start A New Project From Scratch".
+* **"C:\...\NewPlugin.dll is not a valid Win32 application."** See step 3.3 ("Change the debugging command to EmEditor.exe").
 * **Linking issues related to the plug-in library:** "error C2027: use of undefined type 'CMyFrame'", "error LNK2019: unresolved external symbol ... _ETLCreateFrame", "error C2027: use of undefined type 'ETL_FRAME_CLASS_NAME'", "error LNK2005: "void __cdecl DeleteAllFrames(void)" ... already defined in NewPlugin.obj". Make sure all required header includes are added, in the correct order.
 * **"'_USE_LOC_DLL': undeclared identifier."** You must either define the variable `_USE_LOC_DLL` or `#define EE_EXTERN_ONLY`. See step 7.
 * **My new plug-in does not show on the plug-in list after adding it.** Make sure you are importing the correct 32 or 64 bit version of your plug-in.
